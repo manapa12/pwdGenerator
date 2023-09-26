@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password generator</title>
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="title">
+        <h1>Password Generator</h1>
+      </div>
+      <div class="password">
+        <p id="generated-password"></p>
+        <img src="resources/images/clipboard.png" alt="" title="Clipboard" />
+      </div>
+      <div class="containter-password">
+        <div class="password-options">
+          <div class="character-length">
+            <p>Character Length</p>
+            <p id="password-length">0</p>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="15"
+            value="0"
+            class="slider"
+            id="myRange"
+          />
+          <div class="password-symbols">
+            <input
+              type="checkbox"
+              id="uppercase"
+              name="uppercase"
+              value="true"
+            />
+            <label for="uppercase"> Include Uppercase Letters</label><br />
+            <input
+              type="checkbox"
+              id="lowercase"
+              name="lowercase"
+              value="true"
+            />
+            <label for="lowercase"> Include Lowercase Letters</label><br />
+            <input type="checkbox" id="numbers" name="numbers" value="true" />
+            <label for="numbers"> Include Numbers</label><br />
+            <input type="checkbox" id="symbols" name="symbols" value="true" />
+            <label for="symbols"> Include Symbols</label><br />
+          </div>
+          <div class="strength-container">
+            <p>Strength</p>
+            <div class="strength">
+              <p class="p-strength"></p>
+              <div class="measure"></div>
+              <div class="measure"></div>
+              <div class="measure"></div>
+              <div class="measure"></div>
+            </div>
+          </div>
+          <div class="generate-button"></div>
+          <button type="button">Generate</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

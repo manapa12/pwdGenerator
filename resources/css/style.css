@@ -1,0 +1,72 @@
+body{
+    background-color: rgba(20,29,38);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    margin-top: 4rem;
+    
+}
+
+
+.containter-password{
+    background-color: rgba(36,52,71);
+    width: 44rem;
+    padding: 1rem;
+}
+
+h1{
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: gray;
+}
+
+.password{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(36,52,71);
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+}
+
+.password img{
+    height: 1.4rem;
+}
+
+.password img:hover{
+    cursor: pointer;
+}
+
+.password p{
+    margin: 0;
+    color: gray;
+}
+
+.character-length{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    align-items: center;
+    margin: 0;
+}
+
+#password-length{
+    color: green;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.slider{
+  color: green;
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.password-symbols{
+    font-size: 0.8rem;
+}
+
+
+
