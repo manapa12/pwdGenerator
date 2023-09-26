@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password generator</title>
     <link rel="stylesheet" href="resources/css/style.css" />
-    <script src="main.js"></script>
   </head>
   <body>
     <div class="main-container">
@@ -19,13 +18,13 @@
         <div class="password-options">
           <div class="character-length">
             <p>Character Length</p>
-            <p id="password-length">0</p>
+            <p id="password-length"></p>
           </div>
           <input
             type="range"
-            min="1"
-            max="15"
-            value="0"
+            min="8"
+            max="25"
+            value="1"
             class="slider"
             id="myRange"
           />
@@ -52,17 +51,21 @@
           <div class="strength-container">
             <p>Strength</p>
             <div class="strength">
-              <p class="p-strength"></p>
-              <div class="measure"></div>
-              <div class="measure"></div>
-              <div class="measure"></div>
-              <div class="measure"></div>
+              <div class="measure">
+                <p id="p-strength"></p>
+                <div class="measure-box" id="measure-one"></div>
+                <div class="measure-box" id="measure-two"></div>
+                <div class="measure-box" id="measure-three"></div>
+                <div class="measure-box" id="measure-four"></div>
+              </div>
             </div>
           </div>
-          <div class="generate-button"></div>
-          <button type="button">Generate</button>
+          <div class="generate-button">
+            <button type="button" id="create-password">Generate</button>
+          </div>
         </div>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
