@@ -148,6 +148,25 @@ function showLength() {
     return currentValue;
 };
 
+function copyToClipboard(){
+    const textToCopyElement = document.getElementById('generated-password');
+  const textToCopy = textToCopyElement.textContent;
 
+  // Create a temporary textarea element to hold the text
+  const tempTextarea = document.createElement('textarea');
+  tempTextarea.value = textToCopy;
+  document.body.appendChild(tempTextarea);
+
+  // Select the text in the textarea
+  tempTextarea.select();
+
+  // Copy the selected text to the clipboard
+  document.execCommand('copy');
+
+  // Remove the temporary textarea element
+  document.body.removeChild(tempTextarea);
+}
+
+toCopy.addEventListener("click", copyToClipboard);
 
 
