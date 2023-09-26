@@ -12,19 +12,26 @@ let boxTwo = document.getElementById("measure-two");
 let boxThree = document.getElementById("measure-three");
 let boxFour = document.getElementById("measure-four");
 
+let generatedPassword = document.getElementById("generated-password");
+
+let toCopy = document.getElementById("to-copy");
+
 let uppercase = false;
 let lowercase = false;
 let numbers = false;
 let symbols = false;
 
 let contador = 0;
-let strength = [uppercase, lowercase, numbers, symbols];
+let strength = [];
+
+
+
 
 let generate = document.getElementById("create-password");
 
-generate.addEventListener("click", createPassword);
-characterSlider.addEventListener("input", showLength);
 
+characterSlider.addEventListener("input", showLength);
+generate.addEventListener("click", createPassword);
 checkedOne.addEventListener("click", isChecked);
 checkedTwo.addEventListener("click", isCheckedTwo);
 checkedThree.addEventListener("click", isCheckedThree);
@@ -32,10 +39,10 @@ checkedFour.addEventListener("click", isCheckedFour);
 
 function isChecked(){
     if(checkedOne.checked){
-        uppercase = true;
+        strength.uppercase = true;
         contador+=1;
     }else{
-        uppercase = false;
+        strength.uppercase = false;
         contador-=1
     }
     changeStrength();
@@ -43,10 +50,10 @@ function isChecked(){
 
 function isCheckedTwo(){
     if(checkedTwo.checked){
-        lowercase = true;
+        strength.lowercase = true;
         contador+=1;
     }else{
-        lowercase = false;
+        strength.lowercase = false;
         contador-=1;
     }
     changeStrength();
@@ -54,10 +61,10 @@ function isCheckedTwo(){
  
 function isCheckedThree(){
     if(checkedThree.checked){
-        numbers = true;
+        strength.numbers = true;
         contador+=1;
     }else{
-        numbers = false;
+        strength.numbers = false;
         contador-=1;
     }
     changeStrength();
@@ -65,10 +72,10 @@ function isCheckedThree(){
     
 function isCheckedFour(){
    if(checkedFour.checked){
-        symbols = true;
+        strength.symbols = true;
         contador+=1;
     }else{
-        symbols = false;
+        strength.symbols = false;
         contador-=1;
     }
     changeStrength();
@@ -106,7 +113,33 @@ function changeStrength(){
 }
 
 function createPassword(){
-    console.log(strength);
+    let characters = '';
+   const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+   const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   const numberChars = '0123456789';
+   const symbolChars = '!@#$%^&*()_-+={}[]|:;"<>,.?/~';
+    if(contador === 0){
+        alert("Please select at least one option")
+    }else{
+        if (strength.lowercase === true) {
+            characters += lowercaseChars;
+          }
+          if (strength.uppercase === true) {
+            characters += uppercaseChars;
+          }
+          if (strength.numbers === true) {
+            characters += numberChars;
+          }
+          if (strength.symbols === true) {
+            characters += symbolChars;
+          }
+          let password = '';
+  for (let i = 0; i < showLength(); i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters.charAt(randomIndex);
+  }
+   generatedPassword.innerHTML = password;
+    }
 }
 
 function showLength() {
